@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
-gem 'sqlite3'
 gem 'bcrypt-ruby'
 
 group :assets do
@@ -12,3 +11,10 @@ group :assets do
   gem 'zurb-foundation'
 end
 
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
