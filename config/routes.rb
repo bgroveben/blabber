@@ -3,7 +3,10 @@ Blabber::Application.routes.draw do
   root :to => 'pages#landing'
   # url :to => controller#action
   resources :users, :only => [:create]
-  get 'signup', :to => 'users#new', :as => 'signup'
+  get 'signup' => 'users#new'
+  get 'signin' => 'sessions#new'
+  get 'signout'=> 'sessions#destroy'
+  resources :sessions, :only => [:create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
