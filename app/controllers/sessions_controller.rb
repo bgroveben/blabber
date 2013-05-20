@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   	user = User.find_by_email(params[:email])
   	if user && user.authenticate(params[:password])
   	  session[:user_id] = user.id
-  	  redirect_to root_url, :notice => "Greetings, earthling"
+  	  redirect_to blabs_url, :notice => "Greetings, earthling"
   	else
   	  flash[:error] = "Email or password is invalid"
   	  render 'new'

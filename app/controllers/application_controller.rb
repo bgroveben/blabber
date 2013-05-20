@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def authorize
+  	if current_user.nil?
+  		flash[:error] = "Please log in first"
+  		redirect_to signin_path
+  	end
+  end
 end

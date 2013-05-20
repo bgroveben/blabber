@@ -1,5 +1,8 @@
 Blabber::Application.routes.draw do
   
+  resources :blabs
+
+
   root :to => 'pages#landing'
   # url :to => controller#action
   resources :users, :only => [:create]
